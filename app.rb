@@ -3,7 +3,7 @@ require 'socket'
 # reference: https://practicingruby.com/articles/implementing-an-http-file-server
 
 port = 8000
-server = TCPServer.new('localhost', port)
+server = TCPServer.new port
 printf "Starting server on port %d\n", port
 
 loop do
