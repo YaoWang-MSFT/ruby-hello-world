@@ -1,22 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: test0512-002
+  name: testw
   labels:
-    app: test0512-002
-  namespace: namespace-workflow-1683904389432
+    app: testw
+    kubernetes.azure.com/generator: devhub
+  namespace: namespace-workflow-1727803372386
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: test0512-002
+      app: testw
   template:
     metadata:
       labels:
-        app: test0512-002
+        app: testw
     spec:
       containers:
-        - name: test0512-002
-          image: acrworkflow1683832529116.azurecr.io/image-workflow-1683904389432:latest
+        - name: testw
+          image: acrworkflow1727803372386.azurecr.io/image-workflow-1727803372386:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 3000
